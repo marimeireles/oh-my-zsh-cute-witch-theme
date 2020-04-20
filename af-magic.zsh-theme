@@ -10,8 +10,8 @@ typeset +H my_orange="$FG[214]"
 
 # separator dashes size
 function afmagic_dashes {
-	[[ -n "${VIRTUAL_ENV-}" && -z "${VIRTUAL_ENV_DISABLE_PROMPT-}" && "$PS1" = \(* ]] \
-		&& echo $(( COLUMNS - ${#VIRTUAL_ENV} - 3 )) \
+	[[ -n "${CONDA_DEFAULT_ENV-}" && "$PS1" = \(* ]] \
+		&& echo $(( COLUMNS - ${#CONDA_DEFAULT_ENV} - 3 )) \
 		|| echo $COLUMNS
 }
 
